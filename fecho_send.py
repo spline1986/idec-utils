@@ -7,8 +7,8 @@ import sys
 from urllib import request, parse
 
 
-node = ""
-pauth = ""
+node = False
+pauth = False
 config_file = "fecho_send.cfg"
 fileechoarea = False
 filename = False
@@ -81,4 +81,5 @@ def send_file():
 
 get_args()
 load_config()
-send_file()
+if node and pauth:
+    send_file()
